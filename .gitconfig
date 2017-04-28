@@ -1,0 +1,15 @@
+# This is Git's per-user configuration file.
+[user]
+  name = cirpo
+  email = alessandro.cinelli@gmail.com
+[core]
+  filemode = false
+  excludesfile = /Users/cirpo/.gitignore_global
+  editor = /usr/bin/vim
+	autocrlf = input
+[rerere]
+  enabled = true
+[push]
+	default = simple
+[remote "origin"]
+	prune = true
