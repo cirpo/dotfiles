@@ -1,0 +1,62 @@
+#GIT
+alias ck='git checkout'
+alias ckb='git checkout -b'
+alias push='git push'
+alias pushf='git push -f'
+alias pull='git pull'
+alias ci='git commit'
+alias align='git pull --rebase origin master && git pull --rebase origin
+develop'
+alias fetch='git fetch'
+alias undo='git reset --hard HEAD'
+alias dmb='git branch --merged | xargs git branch -d'
+alias glog='git log --oneline --decorate'
+alias st='git status -sb'
+alias gdiff='git diff --word-diff'
+alias tag='git tag'
+alias master='git checkout master'
+alias dev='git checkout develop'
+
+alias la="ls -laF ${colorflag}"
+alias week='date +%V'
+
+alias code="cd /Volumes/Sensitive/code"
+
+# Flush Directory Service cache
+alias flush="dscacheutil -flushcache && killall -HUP mDNSResponder"
+
+# Empty the Trash on all mounted volumes and the main HDD
+# Also, clear Apple’s System Logs to improve shell startup speed
+alias emptytrash="sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash; sudo rm -rfv /private/var/log/asl/*.asl"
+command -v md5sum > /dev/null || alias md5sum="md5"
+
+# Show/hide hidden files in Finder
+alias show="defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder"
+alias hide="defaults write com.apple.finder AppleShowAllFiles -bool false && killall Finder"
+
+# URL-encode strings
+alias urlencode='python -c "import sys, urllib as ul; print ul.quote_plus(sys.argv[1]);"'
+
+# IP addresses
+alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
+alias localip="ipconfig getifaddr en1"
+
+
+# Lock the screen (when going AFK)
+alias afk="/System/Library/CoreServices/Menu\Extras/User.menu/Contents/Resources/CGSession -suspend"
+
+alias rake="noglob bundled_rake"
+NODE_PATH='/usr/local/lib/jsctags:$NODE_PATH'
+
+alias ckfpm="lsof -Pni4 | grep LISTEN | grep php"
+
+#dirs
+alias code="cd ~/code"
+
+alias cs="~/.conscript/bin/cs"
+alias ls="ls --color"
+
+alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+
+alias ealiases='vim ~/.aliases'
+alias evimrc='vim ~/.vimrc'
