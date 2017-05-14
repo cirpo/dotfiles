@@ -49,7 +49,7 @@ Install your dotfiles onto a new system (or migrate to this setup)
   Prior to the installation make sure you have committed the alias to your .bashrc or .zsh:
 
   ```
-  alias dotfiles='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+  alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
   ```
 
   And that your source repository ignores the folder where you'll clone it, so that you don't create weird recursion problems:
@@ -61,13 +61,13 @@ Install your dotfiles onto a new system (or migrate to this setup)
   Now clone your dotfiles into a bare repository in a "dot" folder of your $HOME:
 
   ```
-  git clone --bare <git-repo-url> $HOME/.cfg
+  git clone --bare <git-repo-url> $HOME/.dotfiles
   ```
 
   Define the alias in the current shell scope:
 
   ```
-  alias dotfiles='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+  alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
   ```
 
   Checkout the actual content from the bare repository to your $HOME:
@@ -92,13 +92,13 @@ Install your dotfiles onto a new system (or migrate to this setup)
   This is because your $HOME folder might already have some stock configuration files which would be overwritten by Git. The solution is simple: back up the files if you care about them, remove them if you don't care. I provide you with a possible rough shortcut to move all the offending files automatically to a backup folder:
 
   ```
-  mkdir -p .dotfiles-bak && dotfiles checkout 2>&1 | egrep "\s+\." | awk {'print $1'} | xargs -I{} mv {} .dotfiles-bak/{}
+  cd && mkdir -p .dotfiles-bak && dotfiles checkout 2>&1 | egrep "\s+\." | awk {'print $1'} | xargs -I{} mv {} .dotfiles-bak/{}
   ```
 
   Re-run the check out if you had problems:
 
   ```
-  dofiles checkout
+  dotfiles checkout
   ```
 
   Set the flag showUntrackedFiles to no on this specific (local) repository:
