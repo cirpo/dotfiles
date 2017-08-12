@@ -1,3 +1,8 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =1
+let g:netrw_dirhist_cnt =6
 let g:netrw_dirhist_1='/Users/cirpo/code/tmp'
+let g:netrw_dirhist_2='/Users/acinelli/code/and/angular-1-course-exercises'
+let g:netrw_dirhist_3='/Users/acinelli/code/and/angular-1-course-exercises/1'
+let g:netrw_dirhist_4='/Users/acinelli/code/and/angular-1-course-exercises'
+let g:netrw_dirhist_5='/Users/acinelli/code/jest-styled-components'
+let g:netrw_dirhist_6='/Users/acinelli/code/and/inspect'

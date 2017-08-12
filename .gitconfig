@@ -4,12 +4,12 @@
   email = alessandro.cinelli@gmail.com
 [core]
   filemode = false
-  excludesfile = /Users/cirpo/.gitignore_global
+  excludesfile = /Users/acinelli/.gitignore_global
   editor = /usr/bin/vim
-	autocrlf = input
+  autocrlf = input
 [rerere]
   enabled = true
 [push]
-	default = simple
+  default = simple
 [remote "origin"]
-	prune = true
+  prune = true

@@ -1,3 +1,4 @@
+
 set nocompatible
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
@@ -54,7 +55,12 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-commentary'
 Plug 'scrooloose/syntastic'
 Plug 'tpope/vim-unimpaired'
+
+"{{
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
+let g:javascript_plugin_flow = 1
+"}}
+
 Plug 'moll/vim-node', { 'for': 'javascript' }
 Plug 'jelera/vim-javascript-syntax', { 'for': 'javascript' }
 Plug 'elzr/vim-json', { 'for': 'json' }
@@ -71,10 +77,27 @@ Plug 'rking/ag.vim'
 Plug 'elixir-lang/vim-elixir'
 Plug 'chriskempson/base16-vim'
 Plug 'tmhedberg/matchit'
+"{{
 Plug 'mxw/vim-jsx'
+let g:jsx_ext_required = 0
+"}}
+" ES2015 code snippets (Optional)
+Plug 'epilande/vim-es2015-snippets'
+
+" React code snippets
+Plug 'epilande/vim-react-snippets'
+
+" Ultisnips
+Plug 'SirVer/ultisnips'
+
+Plug 'maxmellon/vim-jsx-pretty'
+
 Plug 'Valloric/MatchTagAlways'
 Plug 'Chiel92/vim-autoformat'
-
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
+Plug 'pearofducks/ansible-vim'
+Plug 'avakhov/vim-yaml'
 
 """
 
@@ -187,11 +210,18 @@ set backupdir=/private/tmp
 " tell vim where to put swap files
 set dir=/private/tmp
 
-let g:jsx_ext_required = 0 " Allow JSX in normal JS files
-
 autocmd BufWritePre * %s/\s\+$//e
 autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 let g:syntastic_javascript_checkers = ['eslint']
 
 
-au BufWrite * :Autoformat
+"au BufWrite * :Autoformat
+
+if filereadable(expand("~/.vimrc_background"))
+  let base16colorspace=256
+  source ~/.vimrc_background
+endif
+
+
+set clipboard=unnamed
+

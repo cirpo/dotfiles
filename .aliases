@@ -20,8 +20,6 @@ alias dev='git checkout develop'
 alias la="ls -laF ${colorflag}"
 alias week='date +%V'
 
-alias code="cd /Volumes/Sensitive/code"
-
 # Flush Directory Service cache
 alias flush="dscacheutil -flushcache && killall -HUP mDNSResponder"
 
@@ -38,25 +36,20 @@ alias hide="defaults write com.apple.finder AppleShowAllFiles -bool false && kil
 alias urlencode='python -c "import sys, urllib as ul; print ul.quote_plus(sys.argv[1]);"'
 
 # IP addresses
-alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
-alias localip="ipconfig getifaddr en1"
-
+alias localip="ipconfig getifaddr en0"
 
 # Lock the screen (when going AFK)
-alias afk="/System/Library/CoreServices/Menu\Extras/User.menu/Contents/Resources/CGSession -suspend"
-
-alias rake="noglob bundled_rake"
-NODE_PATH='/usr/local/lib/jsctags:$NODE_PATH'
-
-alias ckfpm="lsof -Pni4 | grep LISTEN | grep php"
+alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
 
 #dirs
 alias code="cd ~/code"
+alias and="code && cd and"
 
-alias cs="~/.conscript/bin/cs"
-alias ls="ls --color"
 
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
 alias ealiases='vim ~/.aliases'
 alias evimrc='vim ~/.vimrc'
+
+# prettier excluding node_modules
+alias prettier='find . -name "*.js" | grep -v node_modules | xargs prettier --write --single-quote --no-semi --trailing-comma es5'
